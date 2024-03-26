@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Sidebar from "./components/Sidebar";
+import Main from "./components/Main";
 import "./App.css";
 
 function App() {
@@ -26,7 +28,10 @@ function App() {
   }, []);
 
   return (
-    <div className=" ">hi</div>
+    <div className=" h-screen grid grid-cols-4 ">
+      <Sidebar />
+      <Main/>
+    </div>
   );
 }
 
