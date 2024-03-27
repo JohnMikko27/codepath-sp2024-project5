@@ -4,7 +4,6 @@ const Stats = ({ east, west}) => {
       <div># of East teams: 15</div>
       <div># of West teams: 15</div>
       <div># of Non-NBA teams (in this api): 8</div>
-
     </div>
   );
 };

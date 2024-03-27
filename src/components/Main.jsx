@@ -6,6 +6,8 @@ const Main = () => {
   const [east, setEast] = useState([]);
   const [west, setWest] = useState([]);
   const [toggles, setToggles] = useState({east: false, west: false});
+  const [input, setInput] = useState("");
+  const [searchedTeam, setSearchedTeam] = useState("");
 
   useEffect(() => {
     const myHeaders = new Headers();
@@ -45,11 +47,26 @@ const Main = () => {
     }
   };
 
+  const handleSearch = (e) => {
+    setInput(e.target.value);
+    console.log(input);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // toggling them off, so that the only the searched team is shown
+    setToggles({east: false, west: false});
+    console.log("input is " + input);
+    setSearchedTeam(input);
+    setInput("");
+    console.log("usbmited");
+  };
+
 
   return (
     <div className="bg-slate-50 col-start-2 col-end-6 grid grid-rows-4 h-screen">
       <Stats east={east} west={west}/>
-      <TeamListContainer toggles={toggles} handleChange={handleChange} east={east} west={west}/>
+      <TeamListContainer searchedTeam={searchedTeam} handleSubmit={handleSubmit} input={input} handleSearch={handleSearch} toggles={toggles} handleChange={handleChange} east={east} west={west}/>
     </div>
   );
 };

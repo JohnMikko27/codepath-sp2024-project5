@@ -1,19 +1,17 @@
-const TeamList = ({ east, west, toggles}) => {
+const TeamList = ({ east, west, toggles, searchedTeam}) => {
   // if east is toggled, map through east and get its correct info, same with west, and neither, 
   // should i use filter to get the correct items ecah time
   
   // the top should first check if nonnba is true so that i can just map through east and west
   // if it's not checked, then it should just be the nba franchises
-  let eastTeams;
-  let westTeams;
+  let eastTeams = east.filter(t => t.nbaFranchise && t.name !== "Home Team Stephen A");
+  let westTeams = west.filter(t => t.nbaFranchise);
 
-  if (toggles.east) {
-    eastTeams = east.filter(t => t.nbaFranchise && t.name !== "Home Team Stephen A");
+  let team = east.filter(t => t.name === searchedTeam);
+  if (team.length === 0) {
+    team = west.filter(t => t.name === searchedTeam);
   }
-
-  if (toggles.west) {
-    westTeams = west.filter(t => t.nbaFranchise);
-  }
+  console.log(team);
 
   return (
     <div className=" rounded-xl ">
@@ -45,6 +43,19 @@ const TeamList = ({ east, west, toggles}) => {
           </div>
         );
       })}
+      {/* {console.log(team)} */}
+      {team.length !== 0
+        ? 
+        <div className="grid grid-cols-2 justify-items-center items-center mb-8">
+          <div className="flex items-center gap-4 justify-self-start ">
+            <img className=" w-12 ml-20" src={team[0].logo}/>
+            <div className="justify-self-start">{team[0].name}</div>
+          </div>
+          <div>{team[0].city}</div>
+        </div> 
+        : <div className="text-center">Please make sure you typed in the correct team name. E.g. Golden State Warriors</div>
+      }
+      
 
     </div>
 
