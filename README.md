@@ -11,7 +11,7 @@ Time spent: **7** hours spent in total
 The following **required** functionality is completed:
 
 - [x] **The list displays a list of data fetched using an API call**
-- [ ] **Data uses the useEffect React hook and async/await syntax**
+- [x] **Data uses the useEffect React hook and async/await syntax**
 - [x] **The app dashboard includes at least three summary statistics about the data such as**
   - [x] _# of NBA East teams_
   - [x] _# of NBA West teams_
