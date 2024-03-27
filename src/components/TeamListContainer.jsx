@@ -8,7 +8,7 @@ const TeamListContainer = ({
     <div className=" py-6 bg-slate-100 rounded-lg row-start-2 row-end-5 overflow-y-auto">
       <div className="flex justify-center flex-1 items-center gap-12">
         <form onSubmit={handleSubmit}>
-          <input type="text" value={input} onChange={handleSearch} placeholder="Search team"/>
+          <input className="p-2" type="text" value={input} onChange={handleSearch} placeholder="Search team"/>
         </form>
         <div className="flex gap-4 justify-center items-center">
           <input type="checkbox" id="east" value="east" onChange={handleChange} />

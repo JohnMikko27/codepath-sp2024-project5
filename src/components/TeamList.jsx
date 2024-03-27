@@ -1,9 +1,4 @@
 const TeamList = ({ east, west, toggles, searchedTeam}) => {
-  // if east is toggled, map through east and get its correct info, same with west, and neither, 
-  // should i use filter to get the correct items ecah time
-  
-  // the top should first check if nonnba is true so that i can just map through east and west
-  // if it's not checked, then it should just be the nba franchises
   let eastTeams = east.filter(t => t.nbaFranchise && t.name !== "Home Team Stephen A");
   let westTeams = west.filter(t => t.nbaFranchise);
 
@@ -56,9 +51,7 @@ const TeamList = ({ east, west, toggles, searchedTeam}) => {
         : <div className="text-center">Please make sure you typed in the correct team name. E.g. Golden State Warriors</div>
       }
       
-
     </div>
-
   );
 };
 
