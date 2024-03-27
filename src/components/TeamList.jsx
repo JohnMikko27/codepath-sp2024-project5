@@ -16,7 +16,7 @@ const TeamList = ({ east, west, toggles}) => {
   }
 
   return (
-    <div>
+    <div className="  overflow-y-auto">
       <div className="grid grid-cols-2 justify-items-center my-6">
         <h1 className="font-bold text-xl">Team Name</h1>
         <h1 className="font-bold text-xl">City</h1>

@@ -3,7 +3,7 @@ import TeamList from "./TeamList";
 const TeamListContainer = ({ east, west, handleChange, toggles}) => {
     
   return (
-    <div className="row-start-2 row-end-5">
+    <div className="row-start-2 row-end-5 overflow-y-auto">
       <div className="flex justify-center flex-1 gap-8">
         <div>
           <label htmlFor="east">East</label>
