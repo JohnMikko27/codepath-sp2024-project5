@@ -7,7 +7,6 @@ const Main = () => {
   const [west, setWest] = useState([]);
   const [toggles, setToggles] = useState({east: false, west: false});
 
-
   useEffect(() => {
     const myHeaders = new Headers();
     myHeaders.append("x-rapidapi-key", "891bbdd40e39ebf979dd5dff37b6bb3b");
@@ -22,34 +21,27 @@ const Main = () => {
     const fetchEast = async() => {
       const response = await fetch("https://v2.nba.api-sports.io/teams?conference=East", requestOptions);
       const data = await response.json();
-      // console.log(data);
       console.log(data.response);
-      // setTeams(t => ([...t, ...data.response]));
       setEast(data.response);
     };
-
     const fetchWest = async() => {
       const response = await fetch("https://v2.nba.api-sports.io/teams?conference=West", requestOptions);
       const data = await response.json();
-      // console.log(data);
       console.log(data.response);
-      // setTeams(t => ([...t, ...data.response]));
       setWest(data.response);
     };
+
     fetchEast();
     fetchWest();
-    
   }, []);
 
   const handleChange = (e) => {
     if (e.target.checked) {
       setToggles({...toggles, [e.target.value]: true});
       console.log(`handleChange for ${e.target.value} is now true`);
-
     } else {
       setToggles({...toggles, [e.target.value]: false});
       console.log(`handleChange for ${e.target.value} is now false`);
-      
     }
   };
 
@@ -58,8 +50,6 @@ const Main = () => {
     <div className=" col-start-2 col-end-5 grid grid-rows-4 border-black border-2 border-solid">
       <Stats east={east} west={west}/>
       <TeamListContainer toggles={toggles} handleChange={handleChange} east={east} west={west}/>
-      {/* {console.log(east)}
-      {console.log(west)} */}
     </div>
   );
 };

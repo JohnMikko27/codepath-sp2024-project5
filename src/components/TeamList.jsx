@@ -17,25 +17,29 @@ const TeamList = ({ east, west, toggles}) => {
 
   return (
     <div>
+      <div className="grid grid-cols-2 justify-items-center my-6">
+        <h1 className="font-bold text-xl">Team Name</h1>
+        <h1 className="font-bold text-xl">City</h1>
+      </div>
       {toggles.east && eastTeams.map((team ) => {
         return (
-          <div key={team.id} className="grid grid-cols-2 justify-items-center items-center">
-            <div className="flex items-center gap-4">
-              <img className=" w-12 justify-self-end" src={team.logo}/>
-              <div>{team.name}</div>
+          <div key={team.id} className="grid grid-cols-2 justify-items-center items-center mb-8">
+            <div className="flex items-center gap-4 justify-self-start ">
+              <img className=" w-12 ml-20" src={team.logo}/>
+              <div className="justify-self-start">{team.name}</div>
             </div>
             {/* <div>{team.name}</div> */}
             <div>{team.city}</div>
           </div>
         );
       })}
-
+      
       {toggles.west && westTeams.map((team ) => {
         return (
-          <div key={team.id} className="grid grid-cols-2 justify-items-center items-center">
-            <div className="flex items-center gap-4">
-              <img className=" w-12 justify-self-end" src={team.logo}/>
-              <div>{team.name}</div>
+          <div key={team.id} className="grid grid-cols-2 justify-items-center items-center mb-8">
+            <div className="flex items-center gap-4 justify-self-start ">
+              <img className=" w-12 ml-20" src={team.logo}/>
+              <div className="justify-self-start">{team.name}</div>
             </div>
             {/* <div>{team.name}</div> */}
             <div>{team.city}</div>
