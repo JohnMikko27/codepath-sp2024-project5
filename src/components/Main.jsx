@@ -5,7 +5,7 @@ import TeamListContainer from "./TeamListContainer";
 const Main = () => {
   const [east, setEast] = useState([]);
   const [west, setWest] = useState([]);
-  const [toggles, setToggles] = useState({east: true, west: true, neither: true});
+  const [toggles, setToggles] = useState({east: false, west: false});
 
 
   useEffect(() => {
@@ -36,18 +36,30 @@ const Main = () => {
       // setTeams(t => ([...t, ...data.response]));
       setWest(data.response);
     };
-    // fetchEast();
-    // fetchWest();
+    fetchEast();
+    fetchWest();
     
   }, []);
+
+  const handleChange = (e) => {
+    if (e.target.checked) {
+      setToggles({...toggles, [e.target.value]: true});
+      console.log(`handleChange for ${e.target.value} is now true`);
+
+    } else {
+      setToggles({...toggles, [e.target.value]: false});
+      console.log(`handleChange for ${e.target.value} is now false`);
+      
+    }
+  };
 
 
   return (
     <div className=" col-start-2 col-end-5 grid grid-rows-4 border-black border-2 border-solid">
       <Stats east={east} west={west}/>
-      <TeamListContainer east={east} west={west}/>
-      {console.log(east)}
-      {console.log(west)}
+      <TeamListContainer toggles={toggles} handleChange={handleChange} east={east} west={west}/>
+      {/* {console.log(east)}
+      {console.log(west)} */}
     </div>
   );
 };
