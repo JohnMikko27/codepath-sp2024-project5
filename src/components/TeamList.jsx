@@ -8,7 +8,7 @@ const TeamList = ({ east, west, toggles}) => {
   let westTeams;
 
   if (toggles.east) {
-    eastTeams = east.filter(t => t.nbaFranchise);
+    eastTeams = east.filter(t => t.nbaFranchise && t.name !== "Home Team Stephen A");
   }
 
   if (toggles.west) {
@@ -16,11 +16,12 @@ const TeamList = ({ east, west, toggles}) => {
   }
 
   return (
-    <div className="  overflow-y-auto">
+    <div className=" rounded-xl ">
       <div className="grid grid-cols-2 justify-items-center my-6">
         <h1 className="font-bold text-xl">Team Name</h1>
         <h1 className="font-bold text-xl">City</h1>
       </div>
+      
       {toggles.east && eastTeams.map((team ) => {
         return (
           <div key={team.id} className="grid grid-cols-2 justify-items-center items-center mb-8">
@@ -28,7 +29,6 @@ const TeamList = ({ east, west, toggles}) => {
               <img className=" w-12 ml-20" src={team.logo}/>
               <div className="justify-self-start">{team.name}</div>
             </div>
-            {/* <div>{team.name}</div> */}
             <div>{team.city}</div>
           </div>
         );
@@ -41,7 +41,6 @@ const TeamList = ({ east, west, toggles}) => {
               <img className=" w-12 ml-20" src={team.logo}/>
               <div className="justify-self-start">{team.name}</div>
             </div>
-            {/* <div>{team.name}</div> */}
             <div>{team.city}</div>
           </div>
         );

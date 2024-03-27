@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
 
   return (
-    <div className=" h-screen grid grid-cols-4 ">
+    <div className=" h-screen grid grid-cols-5 ">
       <Sidebar />
       <Main/>
     </div>

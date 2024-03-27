@@ -31,8 +31,8 @@ const Main = () => {
       setWest(data.response);
     };
 
-    fetchEast();
-    fetchWest();
+    // fetchEast();
+    // fetchWest();
   }, []);
 
   const handleChange = (e) => {
@@ -47,7 +47,7 @@ const Main = () => {
 
 
   return (
-    <div className=" col-start-2 col-end-5 grid grid-rows-4 border-black border-2 border-solid h-screen">
+    <div className="bg-slate-50 col-start-2 col-end-6 grid grid-rows-4 h-screen">
       <Stats east={east} west={west}/>
       <TeamListContainer toggles={toggles} handleChange={handleChange} east={east} west={west}/>
     </div>
