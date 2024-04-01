@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Stats from "./Stats";
-import TeamListContainer from "./TeamListContainer";
+import Stats from "../components/Stats";
+import TeamListContainer from "../components/TeamListContainer";
 
 const Main = () => {
   const [east, setEast] = useState([]);

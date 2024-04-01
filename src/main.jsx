@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
-import Main from "./components/Main.jsx";
+import Main from "./routes/Main.jsx";
 import ErrorPage from "./routes/ErrorPage.jsx";
 import Details from "./routes/Details.jsx";
+import About from "./routes/About.jsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -29,9 +30,14 @@ const router = createBrowserRouter([
             }
           });
         }
+      }, 
+      {
+        path: "/about", 
+        element: <About/>
       }
-    ]
+    ],
   },
+  
   
 ]);
 
