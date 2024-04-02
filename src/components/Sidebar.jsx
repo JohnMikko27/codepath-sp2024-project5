@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="  flex flex-col gap-8 p-8 ">
+    // <div className="  flex flex-col gap-8 m-4 bg-slate-100 p-8 rounded-xl">
+    <div className="h-full flex flex-col gap-8 p-8 bg-slate-100">
+      
       <Link to="/">
         <h1 className="text-5xl rounded-md hover:underline hover:cursor-pointer">Home</h1>
       </Link>

@@ -26,7 +26,7 @@ function App() {
 
   // the only thing that seems to be changing in regards to the react routing is Main.jsx and Details.jsx
   return (
-    <div className=" h-screen grid grid-cols-5 ">
+    <div className="h-screen grid grid-cols-5 ">
       
       <Sidebar />
       {/* // this should be an outlet, Main should be a route? and then i need to configure the routes in main.jsx */}

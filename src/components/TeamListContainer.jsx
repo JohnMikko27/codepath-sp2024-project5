@@ -5,7 +5,7 @@ const TeamListContainer = ({
   handleSearch, input, handleSubmit, searchedTeam}) => {
     
   return (
-    <div className=" py-6 bg-slate-100 rounded-lg row-start-2 row-end-5 overflow-y-auto">
+    <div className=" pt-8 bg-slate-100 rounded-xl col-start-1 col-end-3 overflow-y-auto ml-4 row-start-1 row-end-2">
       <div className="flex justify-center flex-1 items-center gap-12">
         <form onSubmit={handleSubmit}>
           <input className="p-2" type="text" value={input} onChange={handleSearch} placeholder="Search team"/>
@@ -18,7 +18,6 @@ const TeamListContainer = ({
           <input type="checkbox" id="west" value="west" onChange={handleChange}/>
           <label htmlFor="west" className=" text-2xl">West</label>
         </div>
-        
       </div>
       <TeamList toggles={toggles} east={east} west={west} searchedTeam={searchedTeam}/>
     </div>

@@ -23,7 +23,7 @@ const Chart = ({conference}) => {
       const data = await response.json();
       console.log(data);
       const info = data.response.map((team) => ({
-        code: team.team.code,
+        code: team.team.name,
         wins: team.win.total,
         losses: team.loss.total,
       }));
@@ -36,7 +36,7 @@ const Chart = ({conference}) => {
 
   return (
     <BarChart
-      width={400}
+      width={350}
       height={300}
       data={standings}
       margin={{

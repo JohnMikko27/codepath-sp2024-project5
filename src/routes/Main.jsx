@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Stats from "../components/Stats";
 import TeamListContainer from "../components/TeamListContainer";
+import Chart from "../components/Chart";
 
 const Main = () => {
   const [east, setEast] = useState([]);
@@ -35,8 +36,8 @@ const Main = () => {
     // "https://v2.nba.api-sports.io/teams/statistics?season=2024&id=1" for searching up stats of a specific team
     
 
-    fetchEast();
-    fetchWest();
+    // fetchEast();
+    // fetchWest();
   }, []);
 
   const handleChange = (e) => {
@@ -64,11 +65,23 @@ const Main = () => {
     console.log("usbmited");
   };
 
-
   return (
-    <div className="bg-slate-50 col-start-2 col-end-6 grid grid-rows-4 h-screen">
+    <div className="col-start-2 col-end-6 grid grid-rows-1 gap-4">
       <Stats east={east} west={west}/>
-      <TeamListContainer searchedTeam={searchedTeam} handleSubmit={handleSubmit} input={input} handleSearch={handleSearch} toggles={toggles} handleChange={handleChange} east={east} west={west}/>
+      <div className="grid grid-cols-3">
+        <TeamListContainer searchedTeam={searchedTeam} handleSubmit={handleSubmit} input={input} handleSearch={handleSearch} toggles={toggles} handleChange={handleChange} east={east} west={west}/>
+        <div className="col-start-3 col-end-4 grid">
+          <div className="grid justify-items-center">
+            <div className=" text-lg">East Standings</div>
+            <Chart conference="east"/>
+          </div>
+          <div className="grid justify-items-center">
+            <div className="text-lg">West Standings</div>
+            <Chart conference="west"/>
+          </div>
+        </div>
+      </div>
+      
     </div>
   );
 };
