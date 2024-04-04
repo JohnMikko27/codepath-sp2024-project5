@@ -33,11 +33,9 @@ const Main = () => {
       console.log(data.response);
       setWest(data.response);
     };
-    // "https://v2.nba.api-sports.io/teams/statistics?season=2024&id=1" for searching up stats of a specific team
-    
 
-    // fetchEast();
-    // fetchWest();
+    fetchEast();
+    fetchWest();
   }, []);
 
   const handleChange = (e) => {

@@ -12,8 +12,8 @@ const TeamList = ({ east, west, toggles, searchedTeam}) => {
 
   return (
     <div className=" rounded-xl ">
-      <div className="grid grid-cols-3 justify-items-center my-6">
-        <h1 className="font-bold text-xl">Team Name</h1>
+      <div className="grid grid-cols-4 justify-items-center my-6">
+        <h1 className="font-bold text-xl col-start-1 col-end-3">Team Name</h1>
         <h1 className="font-bold text-xl">City</h1>
         <h1 className="font-bold text-xl">Details</h1>
 
@@ -21,13 +21,13 @@ const TeamList = ({ east, west, toggles, searchedTeam}) => {
       
       {toggles.east && eastTeams.map((team ) => {
         return (
-          <div key={team.id} className="grid grid-cols-3 justify-items-center items-center mb-8">
-            <div className="flex items-center gap-4 justify-self-start ">
+          <div key={team.id} className="grid grid-cols-4 justify-items-center items-center mb-8">
+            <div className="flex items-center gap-4 justify-self-start col-start-1 col-end-3">
               <img className=" w-12 ml-20" src={team.logo}/>
               <div className="justify-self-start">{team.name}</div>
             </div>
             <div>{team.city}</div>
-            <Link to={`/teams/${team.id}`}>Details</Link>
+            <Link to={`/teams/${team.id}`} className="text-xl">🔗</Link>
           </div>
         );
       })}
