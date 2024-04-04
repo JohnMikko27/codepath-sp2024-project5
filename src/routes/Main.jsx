@@ -58,10 +58,8 @@ const Main = () => {
     e.preventDefault();
     // toggling them off, so that the only the searched team is shown
     setToggles({east: false, west: false});
-    console.log("input is " + input);
     setSearchedTeam(input);
     setInput("");
-    console.log("usbmited");
   };
 
   return (
@@ -80,7 +78,6 @@ const Main = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

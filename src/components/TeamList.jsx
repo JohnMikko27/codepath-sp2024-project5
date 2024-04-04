@@ -16,7 +16,6 @@ const TeamList = ({ east, west, toggles, searchedTeam}) => {
         <h1 className="font-bold text-xl col-start-1 col-end-3">Team Name</h1>
         <h1 className="font-bold text-xl">City</h1>
         <h1 className="font-bold text-xl">Details</h1>
-
       </div>
       
       {toggles.east && eastTeams.map((team ) => {
@@ -57,7 +56,6 @@ const TeamList = ({ east, west, toggles, searchedTeam}) => {
         </div> 
         : <div className="text-center">Please make sure you typed in the correct team name. E.g. Golden State Warriors</div>
       }
-      
     </div>
   );
 };
