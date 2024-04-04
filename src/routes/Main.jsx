@@ -46,6 +46,7 @@ const Main = () => {
       setToggles({...toggles, [e.target.value]: false});
       console.log(`handleChange for ${e.target.value} is now false`);
     }
+    setSearchedTeam("");
   };
 
   const handleSearch = (e) => {
@@ -64,7 +65,7 @@ const Main = () => {
   };
 
   return (
-    <div className="col-start-2 col-end-6 grid grid-rows-1 gap-4">
+    <div className="col-start-2 col-end-6 grid grid-rows-1 gap-4 h-screen bg-white pl-4 mb-2">
       <Stats east={east} west={west}/>
       <div className="grid grid-cols-3">
         <TeamListContainer searchedTeam={searchedTeam} handleSubmit={handleSubmit} input={input} handleSearch={handleSearch} toggles={toggles} handleChange={handleChange} east={east} west={west}/>

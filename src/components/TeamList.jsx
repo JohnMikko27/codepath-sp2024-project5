@@ -27,33 +27,33 @@ const TeamList = ({ east, west, toggles, searchedTeam}) => {
               <div className="justify-self-start">{team.name}</div>
             </div>
             <div>{team.city}</div>
-            <Link to={`/teams/${team.id}`} className="text-xl">🔗</Link>
+            <Link to={`/teams/${team.id}`} className="text-2xl">🔗</Link>
           </div>
         );
       })}
       
       {toggles.west && westTeams.map((team ) => {
         return (
-          <div key={team.id} className="grid grid-cols-3 justify-items-center items-center mb-8">
-            <div className="flex items-center gap-4 justify-self-start ">
+          <div key={team.id} className="grid grid-cols-4 justify-items-center items-center mb-8">
+            <div className="flex items-center gap-4 justify-self-start col-start-1 col-end-3 ">
               <img className=" w-12 ml-20" src={team.logo}/>
               <div className="justify-self-start">{team.name}</div>
             </div>
             <div>{team.city}</div>
-            <Link to={`/teams/${team.id}`}>Details</Link>
+            <Link to={`/teams/${team.id}`} className="text-2xl">🔗</Link>
           </div>
         );
       })}
       {/* when one team is specifically searched up */}
-      {team.length !== 0
+      {team.length !== 0 && !toggles.east && !toggles.west
         ? 
-        <div className="grid grid-cols-3 justify-items-center items-center mb-8">
-          <div className="flex items-center gap-4 justify-self-start ">
+        <div className="grid grid-cols-4 justify-items-center items-center mb-8">
+          <div className="flex items-center gap-4 justify-self-start col-start-1 col-end-3">
             <img className=" w-12 ml-20" src={team[0].logo}/>
-            <div className="justify-self-start font-extrabold">{team[0].name}</div>
+            <div className="justify-self-start">{team[0].name}</div>
           </div>
           <div>{team[0].city}</div>
-          <Link to={`/teams/${team[0].id}`}>Details</Link>
+          <Link to={`/teams/${team[0].id}`} className="text-2xl">🔗</Link>
         </div> 
         : <div className="text-center">Please make sure you typed in the correct team name. E.g. Golden State Warriors</div>
       }
