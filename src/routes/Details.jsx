@@ -4,7 +4,7 @@ const Details = () => {
   const { response } = useLoaderData();
   console.log(response);
   return (
-    <div className="grid items-center justify-items-center col-start-2 col-end-6">
+    <div className="grid items-center justify-items-center col-start-2 col-end-6 bg-white">
       <div className="flex justify-center items-center gap-10 p-2 w-11/12 h-5/6 bg-slate-100 rounded-lg">
         <img className=" w-32" src={response[0].team.logo} alt={response[0].team.name}/>
         <h1 className="text-3xl">{response[0].team.name}</h1>
