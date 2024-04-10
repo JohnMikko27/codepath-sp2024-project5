@@ -10,9 +10,11 @@ const Main = () => {
   const [input, setInput] = useState("");
   const [searchedTeam, setSearchedTeam] = useState("");
 
+  const key = import.meta.env.VITE_APP_API_KEY;
+
   useEffect(() => {
     const myHeaders = new Headers();
-    myHeaders.append("x-rapidapi-key", "891bbdd40e39ebf979dd5dff37b6bb3b");
+    myHeaders.append("x-rapidapi-key", key);
     myHeaders.append("x-rapidapi-host", "v2.nba.api-sports.io");
 
     const requestOptions = {
