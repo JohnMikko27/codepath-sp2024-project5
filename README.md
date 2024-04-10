@@ -6,6 +6,8 @@ This web app: **This app fetches data from an api and displays it. You can filte
 
 Time spent: **7** hours spent in total
 
+Live demo: https://codepath-sp2024-project5-six.vercel.app/
+
 ## Required Features
 
 The following **required** functionality is completed:
