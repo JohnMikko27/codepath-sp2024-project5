@@ -9,7 +9,7 @@ import {
   Legend
 } from "recharts";
 
-const Chart = ({conference}) => {
+const Chart = ({conference}: {conference: String}) => {
   const [standings, setStandings] = useState();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Chart = ({conference}) => {
         }});
       const data = await response.json();
       console.log(data);
-      const info = data.response.map((team) => ({
+      const info = data.response.map((team: any) => ({
         code: team.team.name,
         wins: team.win.total,
         losses: team.loss.total,
@@ -47,7 +47,7 @@ const Chart = ({conference}) => {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="code" hide="true"/>
+      <XAxis dataKey="code" hide={true}/>
       <YAxis />
       <Tooltip />
       <Legend />

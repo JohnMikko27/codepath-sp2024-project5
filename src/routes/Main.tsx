@@ -17,7 +17,7 @@ const Main = () => {
     myHeaders.append("x-rapidapi-key", key);
     myHeaders.append("x-rapidapi-host", "v2.nba.api-sports.io");
 
-    const requestOptions = {
+    const requestOptions: RequestInit = {
       method: "GET",
       headers: myHeaders,
       redirect: "follow"
@@ -40,7 +40,7 @@ const Main = () => {
     fetchWest();
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
       setToggles({...toggles, [e.target.value]: true});
       console.log(`handleChange for ${e.target.value} is now true`);
@@ -51,12 +51,12 @@ const Main = () => {
     setSearchedTeam("");
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
     console.log(input);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // toggling them off, so that the only the searched team is shown
     setToggles({east: false, west: false});
@@ -66,7 +66,7 @@ const Main = () => {
 
   return (
     <div className="col-start-2 col-end-6 grid grid-rows-1 gap-4 h-screen bg-white pl-4 mb-2">
-      <Stats east={east} west={west}/>
+      <Stats/>
       <div className="grid grid-cols-3">
         <TeamListContainer searchedTeam={searchedTeam} handleSubmit={handleSubmit} input={input} handleSearch={handleSearch} toggles={toggles} handleChange={handleChange} east={east} west={west}/>
         <div className="col-start-3 col-end-4 grid">
